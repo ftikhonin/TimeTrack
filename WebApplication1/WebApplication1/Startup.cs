@@ -21,28 +21,29 @@ namespace WebApplication1
             _env = env;
         }
         public void ConfigureServices(IServiceCollection services)
-        {            
+        { 
+            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         //public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         //{
-        //// если приложение в процессе разработки
+        //// ГҐГ±Г«ГЁ ГЇГ°ГЁГ«Г®Г¦ГҐГ­ГЁГҐ Гў ГЇГ°Г®Г¶ГҐГ±Г±ГҐ Г°Г Г§Г°Г ГЎГ®ГІГЄГЁ
         //if (env.IsDevelopment())
         //{
-        //    // то выводим информацию об ошибке, при наличии ошибки
+        //    // ГІГ® ГўГ»ГўГ®Г¤ГЁГ¬ ГЁГ­ГґГ®Г°Г¬Г Г¶ГЁГѕ Г®ГЎ Г®ГёГЁГЎГЄГҐ, ГЇГ°ГЁ Г­Г Г«ГЁГ·ГЁГЁ Г®ГёГЁГЎГЄГЁ
         //    app.UseDeveloperExceptionPage();
         //}
-        // добавляем возможности маршрутизации
+        // Г¤Г®ГЎГ ГўГ«ГїГҐГ¬ ГўГ®Г§Г¬Г®Г¦Г­Г®Г±ГІГЁ Г¬Г Г°ГёГ°ГіГІГЁГ§Г Г¶ГЁГЁ
         //app.UseRouting();
 
-        //// устанавливаем адреса, которые будут обрабатываться
+        //// ГіГ±ГІГ Г­Г ГўГ«ГЁГўГ ГҐГ¬ Г Г¤Г°ГҐГ±Г , ГЄГ®ГІГ®Г°Г»ГҐ ГЎГіГ¤ГіГІ Г®ГЎГ°Г ГЎГ ГІГ»ГўГ ГІГјГ±Гї
         //app.UseEndpoints(endpoints =>
         //{
-        //    // обработка запроса - получаем контекст запроса в виде объекта context
+        //    // Г®ГЎГ°Г ГЎГ®ГІГЄГ  Г§Г ГЇГ°Г®Г±Г  - ГЇГ®Г«ГіГ·Г ГҐГ¬ ГЄГ®Г­ГІГҐГЄГ±ГІ Г§Г ГЇГ°Г®Г±Г  Гў ГўГЁГ¤ГҐ Г®ГЎГєГҐГЄГІГ  context
         //    endpoints.MapGet("/", async context =>
         //    {
-        //        // отправка ответа в виде строки "Hello World!"
+        //        // Г®ГІГЇГ°Г ГўГЄГ  Г®ГІГўГҐГІГ  Гў ГўГЁГ¤ГҐ Г±ГІГ°Г®ГЄГЁ "Hello World!"
         //        await context.Response.WriteAsync(String.Concat("Hello World! ",$"Application Name: {_env.ApplicationName}"));
         //    });
         //});
