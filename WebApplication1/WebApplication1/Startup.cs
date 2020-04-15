@@ -72,7 +72,7 @@ namespace WebApplication1
         //app.Run(async (context) =>
         //{
         //    await context.Response.WriteAsync($"x * y = {z}");
-        //});
+        //}); 
         public void Configure(IApplicationBuilder app)
         {
             app.Map("/home", home =>
