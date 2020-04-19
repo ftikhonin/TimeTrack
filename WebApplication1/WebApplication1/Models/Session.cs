@@ -7,11 +7,11 @@ namespace WebApplication1.Models
 {
     public class Session
     {
-        public int Id { get; set; }
+        public int SessionId { get; set; }
         public string Description { get; set; }
 
         public DateTime Start { get; set; }
-        public DateTime End { get; set; }
+        public DateTime? End { get; set; }
 
         public int WorkId { get; set; }
         public Work Work { get; set; }

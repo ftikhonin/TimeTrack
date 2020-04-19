@@ -22,7 +22,9 @@ namespace WebApplication1
                     {
                         Url = "https://redmine.permenergosbyt.ru/issues/104796",
                         Description = "Проверить корректность"
-                    });
+                    }
+                    ); 
+                
                 context.SaveChanges();
             }
 

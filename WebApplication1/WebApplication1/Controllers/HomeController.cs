@@ -12,16 +12,20 @@ namespace WebApplication1.Controllers
     
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        //private readonly ILogger<HomeController> _logger;
+        WorkContext db;
 
-        public HomeController(ILogger<HomeController> logger)
+        //public HomeController(ILogger<HomeController> logger)
+        //{
+        //    _logger = logger;
+        //}
+        public HomeController(WorkContext context)
         {
-            _logger = logger;
+            db = context;
         }
-
         public IActionResult Index()
         {
-            return View();
+            return View(db.Works.ToList());
         }
 
         public IActionResult Privacy()
@@ -29,6 +33,22 @@ namespace WebApplication1.Controllers
             return View();
         }
 
+        [HttpGet]
+        public IActionResult Start(int? id)
+        {
+            if (id == null) return RedirectToAction("Index");
+            ViewBag.WorkId = id;
+            return View();
+        }
+
+        [HttpPost]
+        public string Start(Session session)
+        {
+            db.Sessions.Add(session);
+            // Save to DB
+            db.SaveChanges();
+            return "Активно с " + session.Start;
+        }
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
