@@ -1,5 +1,5 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Добавление задания";
 }
 
 <!DOCTYPE html>
@@ -10,24 +10,33 @@
 <body>
     <div>
         <h3>Форма добавления задания</h3>
-        <p>Для добавления задания заполните следующие поля:</p>
-        <form method="post">
+
+        <form method="post" class="form-horizontal" role="form">
             <input type="hidden" value="@ViewBag.WorkId" name="WorkId" />
-            <table>
-                <tr>
-                    <td>Описание:</td>
-                    <td><input type="text" name="Description" /> </td>
-                </tr>
-                <tr>
-                    <td>С:</td>
-                    <td><input type="datetime" name="Start" /></td>
-                </tr>
-                <tr>
-                    <td>по:</td>
-                    <td><input type="datetime" name="End" /></td>
-                </tr>
-                <tr><td><input type="submit" value="Добавить" /> </td><td></td></tr>
-            </table>
+            <p>Для добавления задания заполните следующие поля:</p>
+            <div class="form-group">
+                <label for="Description" class="col-md-2 control-label">Описание:</label>
+                <div class="col-md-4">
+                    <input type="text" name="Description" class="form-control" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="Start" class="col-md-2 control-label">С:</label>
+                <div class="col-md-4">
+                    <input type="datetime" name="Start" class="form-control" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="End" class="col-md-2 control-label">По:</label>
+                <div class="col-md-4">
+                    <input type="datetime" name="End" class="form-control" />
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" class="btn btn-default" value="Добавить" />
+                </div>
+            </div>
         </form>
     </div>
 </body>
