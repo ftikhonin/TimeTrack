@@ -2,11 +2,26 @@
 @{
     ViewData["Title"] = "Task List";
 }
+<head>
+    <input type="text" name="name" data-autocomplete-source='@Url.Action("AutocompleteSearch", "Home")' />
+    <input type="submit" value="Поиск" />
+ 
+    <script src='@Url.Content("~/lib/jquery/dist/jquery.min.js")' type="text/javascript"></script>
+    <script src='@Url.Content("~/lib/jquery-ui-1.12.1/jquery-ui.min.js")' type="text/javascript"></script> 
+    <script type="text/javascript">
+    $(function () {
+        $("[data-autocomplete-source]").each(function () {
+            var target = $(this);
+            target.autocomplete({ source: target.attr("data-autocomplete-source") });
+        });
+    });
+    </script>
+</head>
 <h3>Task List</h3>
 <body>
     <table class="table-condensed">
         <tr>
-            <td>Номер</td>
+            <td>#</td>
             <td>Ссылка</td>
             <td>Описание</td>
             <td></td>
@@ -17,7 +32,20 @@
                 <td>@work.Id</td>
                 <td><a href=@work.Url>@work.Url</a></td>
                 <td>@work.Description</td>
-                <td><a href="~/Home/Start/@work.Id">Старт</a></td>
+                <td>
+                    <div id="timerContainer">
+                    <div class="timer" onclick="startTimer()">Start Timer!</div>
+                    <div class="startTimer reset" onclick="startTimer()" >
+                        <i class="fas fa-play"></i>
+                    </div>
+                    <div class="pauseTimer reset" onclick="pauseTimer()" >
+                        <i class="fas fa-pause"></i>
+                    </div>
+                    <div class="resetTimer reset" onclick="resetTimer()">Reset</div>
+                    </div>
+                    <script type="text/javascript" src="/js/stopWatch.js"></script>
+                </td>
+                @* <td><a href="~/Home/Start/@work.Id">Старт</a></td> *@
             </tr>
         }
     </table>

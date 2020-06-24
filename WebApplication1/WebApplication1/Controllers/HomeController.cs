@@ -40,7 +40,14 @@ namespace WebApplication1.Controllers
             ViewBag.WorkId = id;
             return View();
         }
-
+        public ActionResult AutocompleteSearch(string term)
+        {
+            var works = db.Works.Where(a => a.Description.Contains(term))
+                            .Select(a => new { value = a.Description})
+                            .Distinct();
+ 
+            return Json(works);
+        }
         [HttpPost]
         public string Start(Session session)
         {

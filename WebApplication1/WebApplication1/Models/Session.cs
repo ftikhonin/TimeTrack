@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Diagnostics;
+using System.Threading;
 
 namespace WebApplication1.Models
 {
@@ -16,5 +18,6 @@ namespace WebApplication1.Models
         public int WorkId { get; set; }
         public Work Work { get; set; }
 
+        // public Stopwatch Stopwatch { get; set; }
     }
 }
