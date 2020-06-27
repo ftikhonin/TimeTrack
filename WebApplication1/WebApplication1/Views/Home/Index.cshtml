@@ -7,9 +7,9 @@
     <input type="search" id="searchrec" class="search" placeholder="Search Data ...!" />
     <table class="table" id="workTable">
         <tr>
-            <td>Номер</td>
-            <td>Ссылка</td>
-            <td>Описание</td>
+            <td>#</td>
+            <td>Url</td>
+            <td>Description</td>
             <td></td>
         </tr>
         @foreach (var work in Model)
@@ -23,24 +23,22 @@
         }
     </table>
 
+    <!-- Table row search -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>
-    $(document).ready(function ()
-    {
-        $(".search").on("keyup", function ()
-        {
-            var datasearch = $(this).val().toLowerCase();
-            $("#workTable tr").each(function ()
-            {
-                var stringdata = $(this).text().toLowerCase();
-                if (stringdata.indexOf(datasearch) === -1) {
-                    $(this).hide();
-                }
-                else {
-                    $(this).show();
-                }
+        $(document).ready(function () {
+            $(".search").on("keyup", function () {
+                var datasearch = $(this).val().toLowerCase();
+                $("#workTable tr").each(function () {
+                    var stringdata = $(this).text().toLowerCase();
+                    if (stringdata.indexOf(datasearch) === -1) {
+                        $(this).hide();
+                    }
+                    else {
+                        $(this).show();
+                    }
+                });
             });
-        });
-    })
+        })
     </script>
 </body>
