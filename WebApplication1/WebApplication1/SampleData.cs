@@ -15,12 +15,12 @@ namespace WebApplication1
                 context.Works.AddRange(
                     new Work
                     {
-                        Url = "https://redmine.permenergosbyt.ru/issues/101180",
+                        Url = "https://redmine.ru/issues/101180",
                         Description = "Добавить флаг"
                     },
                     new Work
                     {
-                        Url = "https://redmine.permenergosbyt.ru/issues/104796",
+                        Url = "https://redmine.ru/issues/104796",
                         Description = "Проверить корректность"
                     }
                     ); 

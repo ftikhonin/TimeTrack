@@ -17,8 +17,8 @@ namespace WebApplication1.Controllers
         }
         // GET: App/Timer
         public IActionResult Timer()
-        {
-            return View();
+        {            
+            return View(db.Works.ToList());
         }
 
         // GET: App/Projects
@@ -33,13 +33,20 @@ namespace WebApplication1.Controllers
             return View();
         }
 
+        [HttpPost]
+        public IActionResult AddWork(string description)
+        {
+            var q = description;
+            return View();
+        }
+
         // POST: AppController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        public IActionResult Create(string description)
         {
             try
-            {
+            {                
                 return RedirectToAction(nameof(Index));
             }
             catch
