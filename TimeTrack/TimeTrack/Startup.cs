@@ -5,14 +5,14 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
-using WebApplication1.Models; //Model namespace
+using TimeTrack.Models; //Model namespace
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using WebApplication1.Controllers;
+using TimeTrack.Controllers;
 
-namespace WebApplication1
+namespace TimeTrack
 {
     public class Startup
     {

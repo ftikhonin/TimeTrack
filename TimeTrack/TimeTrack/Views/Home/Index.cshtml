@@ -1,4 +1,4 @@
-﻿@model IEnumerable<WebApplication1.Models.Work>
+﻿@model IEnumerable<TimeTrack.Models.Work>
 @{
     ViewData["Title"] = "Task List";
 }
@@ -11,17 +11,27 @@
             <td>Url</td>
             <td>Description</td>
             <td></td>
+            <td></td>
         </tr>
         @foreach (var work in Model)
         {
-            <tr>
-                <td>@work.Id</td>
-                <td><a href=@work.Url>@work.Url</a></td>
-                <td>@work.Description</td>
-                <td><a href="~/Home/Start/@work.Id">Старт</a></td>
-            </tr>
+    <tr>
+        <td>@work.Id</td>
+        <td><a href=@work.Url>@work.Url</a></td>
+        <td>@work.Description</td>
+        <td><a href="~/Home/Start/@work.Id">Старт</a></td>
+        <td>
+            <link rel="stylesheet" href="~/css/discussion.css">
+            <a href="#" class="btn"></a>
+        </td>
+    </tr>
         }
     </table>
+    <form method="POST">
+        <label for="Description">Your Description</label>
+        <input type="text" name="description" id="description" class="text-info" placeholder="What are you working on?" size="25" />
+        <input type="submit" />
+    </form>
     <!--#region Table row search  -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>
@@ -32,7 +42,7 @@
                     var stringdata = $(this).text().toLowerCase();
                     if (stringdata.indexOf(datasearch) === -1) {
                         $(this).hide();
-                    }
+                    }                    
                     else {
                         $(this).show();
                     }
@@ -42,3 +52,12 @@
     </script>
     <!--#endregion -->
 </body>
+
+<div class="PopdownV2__container PopdownV2__open css-0" tabindex="-1" data-ignore-global-hotkeys="true">
+    <div class="css-1nrq5jk ekakxov0"></div>
+    <div class="PopdownV2__popdown css-knt54p">
+    <div class="css-gcupj2 ej800vr0">
+        <span>Delete</span>
+        </div>
+        </div>
+</div>

@@ -4,9 +4,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using WebApplication1.Models;
+using TimeTrack.Models;
 
-namespace WebApplication1.Controllers
+namespace TimeTrack.Controllers
 {
     public class AppController : Controller
     {
