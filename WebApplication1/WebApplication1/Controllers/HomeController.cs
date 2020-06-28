@@ -12,22 +12,23 @@ namespace WebApplication1.Controllers
     
     public class HomeController : Controller
     {
-        //private readonly ILogger<HomeController> _logger;
-        WorkContext db;
-
-        //public HomeController(ILogger<HomeController> logger)
-        //{
-        //    _logger = logger;
-        //}
+        WorkContext db;       
         public HomeController(WorkContext context)
         {
             db = context;
         }
+        [HttpGet]
         public IActionResult Index()
         {
             return View(db.Works.ToList());
         }
-
+        [HttpPost]
+        public IActionResult Index(string description)
+        {
+            db.AddWork(description);
+            db.SaveChanges();
+            return View(db.Works.ToList());
+        }
         public IActionResult Privacy()
         {
             return View();
@@ -49,6 +50,7 @@ namespace WebApplication1.Controllers
             db.SaveChanges();
             return "Активно с " + session.Start;
         }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {

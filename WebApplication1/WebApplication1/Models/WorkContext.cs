@@ -17,6 +17,13 @@ namespace WebApplication1.Models
         {
             Database.EnsureCreated();
         }
-
+        public void AddWork(string description)
+        {
+            Works.AddRange(new Work
+            {
+                Url = "https://redmine.ru/issues/664",
+                Description = description
+            });
+        }
     }
 }

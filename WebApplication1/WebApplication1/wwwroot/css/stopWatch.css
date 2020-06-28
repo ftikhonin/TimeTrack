@@ -1,0 +1,29 @@
+#timerContainer {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 300;
+    width:400px;
+    margin:20px auto;
+    min-height: 60px;
+    border-top:0px;
+  }
+  .timer, .reset {
+    float:left;
+    width: 54%;
+    padding: 20px 0;
+    font-size: 16px;
+    text-align:center;
+    /* color: #fff; */
+    background: #fff;
+    cursor: pointer
+  }
+  .reset {
+    background: #fff;
+    width:14.9%;
+    border-left: 1px solid #fff;
+  }
+  .reset:hover {
+    background: #9e9e9e;
+  }
+  .lighter {
+    background: #9e9e9e
+  }
