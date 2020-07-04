@@ -12,22 +12,22 @@ namespace TimeTrack.Controllers
     
     public class HomeController : Controller
     {
-        WorkContext db;       
-        public HomeController(WorkContext context)
+        TaskContext db;       
+        public HomeController(TaskContext context)
         {
             db = context;
         }
         [HttpGet]
         public IActionResult Index()
         {
-            return View(db.Works.ToList());
+            return View(db.Tasks.ToList());
         }
         [HttpPost]
         public IActionResult Index(string description)
         {
-            db.AddWork(description);
+            db.AddTask(description);
             db.SaveChanges();
-            return View(db.Works.ToList());
+            return View(db.Tasks.ToList());
         }
         public IActionResult Privacy()
         {
@@ -38,7 +38,7 @@ namespace TimeTrack.Controllers
         public IActionResult Start(int? id)
         {
             if (id == null) return RedirectToAction("Index");
-            ViewBag.WorkId = id;
+            ViewBag.TaskId = id;
             return View();
         }
 

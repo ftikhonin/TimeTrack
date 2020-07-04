@@ -10,15 +10,15 @@ namespace TimeTrack.Controllers
 {
     public class AppController : Controller
     {
-        WorkContext db;
-        public AppController(WorkContext context)
+        TaskContext db;
+        public AppController(TaskContext context)
         {
             db = context;
         }
         // GET: App/Timer
         public IActionResult Timer()
         {            
-            return View(db.Works.ToList());
+            return View(db.Tasks.ToList());
         }
 
         // GET: App/Projects
@@ -34,7 +34,7 @@ namespace TimeTrack.Controllers
         }
 
         [HttpPost]
-        public IActionResult AddWork(string description)
+        public IActionResult AddTask(string description)
         {
             var q = description;
             return View();

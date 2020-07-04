@@ -1,24 +1,24 @@
-﻿@model IEnumerable<TimeTrack.Models.Work>
+﻿@model IEnumerable<TimeTrack.Models.Task>
 @{
     ViewData["Title"] = "Task List";
 }
 <h3>Task List</h3>
 <body>
     <input type="search" id="searchrec" class="search" placeholder="Search Data ...!" />
-    <table class="table" id="workTable">
+    <table class="table" id="taskTable">
         <tr>
             <td>#</td>
-            <td>Url</td>
+            <td>TaskId</td>
             <td>Description</td>
             <td></td>
         </tr>
-        @foreach (var work in Model)
+        @foreach (var task in Model)
         {
             <tr>
-                <td>@work.Id</td>
-                <td><a href=@work.Url>@work.Url</a></td>
-                <td>@work.Description</td>
-                <td><a href="~/Home/Start/@work.Id">Старт</a></td>
+                <td>@task.Id</td>
+                <td><a href=@task.ProjectId>@task.ProjectId</a></td>
+                <td>@task.Description</td>
+                <td><a href="~/Home/Start/@task.Id">Старт</a></td>
             </tr>
         }
     </table>
@@ -28,7 +28,7 @@
         $(document).ready(function () {
             $(".search").on("keyup", function () {
                 var datasearch = $(this).val().toLowerCase();
-                $("#workTable tr").each(function () {
+                $("#taskTable tr").each(function () {
                     var stringdata = $(this).text().toLowerCase();
                     if (stringdata.indexOf(datasearch) === -1) {
                         $(this).hide();

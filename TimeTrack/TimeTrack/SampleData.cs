@@ -8,19 +8,19 @@ namespace TimeTrack
 {
     public static class SampleData
     {
-        public static void Initialize(WorkContext context)
+        public static void Initialize(TaskContext context)
         {
-            if (!context.Works.Any())
+            if (!context.Tasks.Any())
             {
-                context.Works.AddRange(
-                    new Work
+                context.Tasks.AddRange(
+                    new Models.Task
                     {
-                        Url = "https://redmine.ru/issues/101180",
+                        ProjectId = 2,
                         Description = "Добавить флаг"
                     },
-                    new Work
+                    new Models.Task
                     {
-                        Url = "https://redmine.ru/issues/104796",
+                        ProjectId = 3,
                         Description = "Проверить корректность"
                     }
                     ); 

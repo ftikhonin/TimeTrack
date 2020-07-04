@@ -6,22 +6,22 @@ using Microsoft.EntityFrameworkCore;
 
 namespace TimeTrack.Models
 {
-    public class WorkContext : DbContext
+    public class TaskContext : DbContext
     {
         //Each DBSet property would relate to a separate table in the DB
-        public DbSet<Work> Works { get; set; }
+        public DbSet<Task> Tasks { get; set; }
         public DbSet<Session> Sessions { get; set; }
 
-        public WorkContext(DbContextOptions<WorkContext> options)
+        public TaskContext(DbContextOptions<TaskContext> options)
             : base(options)
         {
             Database.EnsureCreated();
         }
-        public void AddWork(string description)
+        public void AddTask(string description)
         {
-            Works.AddRange(new Work
+            Tasks.AddRange(new Task
             {
-                Url = "https://redmine.ru/issues/664",
+                ProjectId = 1,
                 Description = description
             });
         }

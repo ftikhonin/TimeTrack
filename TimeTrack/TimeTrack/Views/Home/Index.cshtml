@@ -1,30 +1,30 @@
-﻿@model IEnumerable<TimeTrack.Models.Work>
+﻿@model IEnumerable<TimeTrack.Models.Task>
 @{
     ViewData["Title"] = "Task List";
 }
 <h3>Task List</h3>
 <body>
     <input type="search" id="searchrec" class="search" placeholder="Search Data ...!" />
-    <table class="table" id="workTable">
+    <table class="table" id="taskTable">
         <tr>
             <td>#</td>
-            <td>Url</td>
+            <td>TaskId</td>
             <td>Description</td>
             <td></td>
             <td></td>
         </tr>
-        @foreach (var work in Model)
+        @foreach (var task in Model)
         {
-    <tr>
-        <td>@work.Id</td>
-        <td><a href=@work.Url>@work.Url</a></td>
-        <td>@work.Description</td>
-        <td><a href="~/Home/Start/@work.Id">Старт</a></td>
-        <td>
-            <link rel="stylesheet" href="~/css/discussion.css">
-            <a href="#" class="btn"></a>
-        </td>
-    </tr>
+            <tr>
+                <td>@task.Id</td>
+                <td><a href=@task.Id>@task.Id</a></td>
+                <td>@task.Description</td>
+                <td><a href="~/Home/Start/@task.Id">Старт</a></td>
+                <td>
+                    <link rel="stylesheet" href="~/css/discussion.css">
+                    <a href="#" class="btn"></a>
+                </td>
+            </tr>
         }
     </table>
     <form method="POST">
@@ -38,11 +38,11 @@
         $(document).ready(function () {
             $(".search").on("keyup", function () {
                 var datasearch = $(this).val().toLowerCase();
-                $("#workTable tr").each(function () {
+                $("#taskTable tr").each(function () {
                     var stringdata = $(this).text().toLowerCase();
                     if (stringdata.indexOf(datasearch) === -1) {
                         $(this).hide();
-                    }                    
+                    }
                     else {
                         $(this).show();
                     }
@@ -53,11 +53,27 @@
     <!--#endregion -->
 </body>
 
-<div class="PopdownV2__container PopdownV2__open css-0" tabindex="-1" data-ignore-global-hotkeys="true">
-    <div class="css-1nrq5jk ekakxov0"></div>
-    <div class="PopdownV2__popdown css-knt54p">
-    <div class="css-gcupj2 ej800vr0">
+<div tabindex="0" title="Continue time entry" class="css-1jv4yir e1ohjrw70"><div class="css-m35kig e1ohjrw72"></div></div>
+<div class=" e1o4ivbv0 css-vid3m3 e18w30ep0">
+    <div tabindex="0" title="More actions" class="css-1bwa2ag e18w30ep2">
+        <svg width="4" height="16" viewBox="0 0 4 16" class="css-vkhhdd e18w30ep1">
+            <path fill="#cecece" fill-rule="evenodd" d="M0 2a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm0 12a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm0-6a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"></path>
+        </svg>
+    </div>
+    <div class="PopdownV2__container css-0" tabindex="-1" data-ignore-global-hotkeys="true">
+        <div class="css-1nrq5jk ekakxov0"></div>
+        <div class="PopdownV2__popdown css-knt54p"></div>
+    </div>
+    <div class=" e1o4ivbv0 css-vid3m3 e18w30ep0" open="">
+    <div tabindex="0" title="More actions" class="css-f0lkrf e18w30ep2" open="">
+        <svg width="4" height="16" viewBox="0 0 4 16" class="css-vkhhdd e18w30ep1">
+        <path fill="#cecece" fill-rule="evenodd" d="M0 2a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm0 12a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm0-6a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"></path></svg></div>
+    <div class="PopdownV2__container PopdownV2__open css-0" tabindex="-1" data-ignore-global-hotkeys="true">
+        <div class="css-1nrq5jk ekakxov0"></div><div class="PopdownV2__popdown css-knt54p">
+        <div class="css-gcupj2 ej800vr0">
         <span>Delete</span>
+            </div>
+              </div>
         </div>
-        </div>
+    </div>
 </div>
