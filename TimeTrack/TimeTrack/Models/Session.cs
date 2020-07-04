@@ -13,8 +13,8 @@ namespace TimeTrack.Models
         public DateTime Start { get; set; }
         public DateTime? End { get; set; }
 
-        public int WorkId { get; set; }
-        public Work Work { get; set; }
+        public int TaskId { get; set; }
+        public Task Task { get; set; }
 
     }
 }

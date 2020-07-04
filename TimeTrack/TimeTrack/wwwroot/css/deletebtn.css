@@ -1,0 +1,24 @@
+﻿.deletebtn {
+    color: #222;
+    -webkit-font-smoothing: antialiased;
+    text-size-adjust: 100%;
+    text-rendering: optimizeLegibility;
+    list-style: none;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: initial;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    border-radius: 8px;
+    opacity: 0;
+}

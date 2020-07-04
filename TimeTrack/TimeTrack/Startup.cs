@@ -28,7 +28,7 @@ namespace TimeTrack
         {
             //string connection = Configuration.GetConnectionString("DefaultConnection");
             //services.AddDbContext<WorkContext>(options => options.UseSqlServer(connection));
-            services.AddDbContext<WorkContext>(options =>
+            services.AddDbContext<TaskContext>(options =>
         options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
             services.AddControllersWithViews();
         }

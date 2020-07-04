@@ -21,7 +21,7 @@ namespace TimeTrack
                 var services = scope.ServiceProvider;
                 try
                 {
-                    var context = services.GetRequiredService<WorkContext>();
+                    var context = services.GetRequiredService<TaskContext>();
                     SampleData.Initialize(context);
                 }
                 catch(Exception ex)
